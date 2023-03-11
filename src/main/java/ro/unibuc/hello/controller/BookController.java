@@ -39,4 +39,20 @@ public class BookController {
     public void deleteBook(@RequestParam(name="id") String id) {
         bookRepository.deleteById(String.valueOf(new ObjectId(id)));
     }
+
+    @PutMapping("/book/edit")
+    @ResponseBody
+    public BookEntity editBook(@RequestParam(name="id") String id, @RequestParam(name="title") String title, @RequestParam(name="author") String author, @RequestParam(name="genre") String genre) {
+        BookEntity book = bookRepository.findById(String.valueOf(new ObjectId(id))).orElse(null);
+        if(book != null) {
+            if(name != null)
+                book.setTitle(title);
+            if(email != null)
+                book.setAuthor(author);
+            if(email != null)
+                book.setGenre(genre);
+            return bookRepository.save(book);
+        } else
+            return  null;
+    }
 }

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import ro.unibuc.hello.data.BookEntity;
@@ -45,11 +47,11 @@ public class BookController {
     public BookEntity editBook(@RequestParam(name="id") String id, @RequestParam(name="title") String title, @RequestParam(name="author") String author, @RequestParam(name="genre") String genre) {
         BookEntity book = bookRepository.findById(String.valueOf(new ObjectId(id))).orElse(null);
         if(book != null) {
-            if(name != null)
+            if(title != null)
                 book.setTitle(title);
-            if(email != null)
+            if(author != null)
                 book.setAuthor(author);
-            if(email != null)
+            if(genre != null)
                 book.setGenre(genre);
             return bookRepository.save(book);
         } else

@@ -33,4 +33,10 @@ public class BookController {
     public BookEntity getBook(@RequestParam(name="id") String id) {
         return bookRepository.findById(String.valueOf(new ObjectId(id))).orElse(null);
     }
+
+    @DeleteMapping("/book/delete")
+    @ResponseBody
+    public void deleteBook(@RequestParam(name="id") String id) {
+        bookRepository.deleteById(String.valueOf(new ObjectId(id)));
+    }
 }

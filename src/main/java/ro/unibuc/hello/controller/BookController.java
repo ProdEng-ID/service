@@ -44,7 +44,7 @@ public class BookController {
 
     @PutMapping("/book/edit")
     @ResponseBody
-    public BookEntity editBook(@RequestParam(name="id") String id, @RequestParam(name="title") String title, @RequestParam(name="author") String author, @RequestParam(name="genre") String genre) {
+    public BookEntity editBook(@RequestParam(name="id") String id, @RequestParam(name="title", required=false) String title, @RequestParam(name="author", required=false) String author, @RequestParam(name="genre", required=false) String genre) {
         BookEntity book = bookRepository.findById(String.valueOf(new ObjectId(id))).orElse(null);
         if(book != null) {
             if(title != null)

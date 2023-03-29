@@ -53,7 +53,7 @@ public class BookEntity {
     @Override
     public String toString() {
         return String.format(
-                "Book[title='%s', author='%s', genre='%s']",
+                "Book[id='%s', title='%s', author='%s', genre='%s']",
                 id, title, author, genre);
     }
 }

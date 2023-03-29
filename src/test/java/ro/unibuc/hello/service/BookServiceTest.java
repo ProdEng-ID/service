@@ -24,7 +24,7 @@ class BookServiceTest {
     BookRepository bookRepository;
 
     @InjectMocks
-    BookService bookService = new BookService();
+    BookService bookService;
 
     BookEntity bookEntity;
     BookEntity bookEntityWithId;
@@ -39,7 +39,7 @@ class BookServiceTest {
     void setUp() {
         bookEntity = new BookEntity("Book", "John Doe", "Fantasy");
         bookEntityWithId = new BookEntity("Book", "John Doe", "Fantasy");
-        bookEntityWithId.setId("61ab35dacf174baf213");
+        bookEntityWithId.setId("6413456b37d7e23385bfe7f1");
         updatedBookEntity = new BookEntity("Book 2", "Jane Doe", "Horror");
         updatedBookEntity.setId(bookEntityWithId.getId());
         bookEntities = new ArrayList<>();

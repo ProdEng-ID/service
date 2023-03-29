@@ -2,14 +2,14 @@ package ro.unibuc.hello.service;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ro.unibuc.hello.data.BookEntity;
 import ro.unibuc.hello.data.BookRepository;
 import ro.unibuc.hello.dto.BookDTO;
 
 import java.util.ArrayList;
 
-@Component
+@Service
 public class BookService {
     @Autowired
     private BookRepository bookRepository;

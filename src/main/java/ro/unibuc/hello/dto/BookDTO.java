@@ -3,6 +3,8 @@ package ro.unibuc.hello.dto;
 import org.springframework.data.annotation.Id;
 import ro.unibuc.hello.data.BookEntity;
 
+import java.util.Objects;
+
 public class BookDTO {
     @Id
     private String id;
@@ -58,5 +60,18 @@ public class BookDTO {
                 ", author='" + author + '\'' +
                 ", genre='" + genre + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BookDTO bookDTO = (BookDTO) o;
+        return Objects.equals(id, bookDTO.id) && Objects.equals(title, bookDTO.title) && Objects.equals(author, bookDTO.author) && Objects.equals(genre, bookDTO.genre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, author, genre);
     }
 }

@@ -17,7 +17,7 @@ class BookDTOTest {
     String bookDTOString;
     @BeforeEach
     void setUp() {
-        id = "61ab35dacf174baf213";
+        id = "413456b37d7e23385bfe7f1";
         title = "Book";
         author = "John Doe";
         genre = "Fantasy";

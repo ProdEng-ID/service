@@ -17,6 +17,8 @@ public class HelloApplication {
 	@Autowired
 	private BookRepository bookRepository;
 
+	BookEntity bookEntityWithId;
+
 	public static void main(String[] args) {
 		SpringApplication.run(HelloApplication.class, args);
 	}
@@ -26,6 +28,10 @@ public class HelloApplication {
 		informationRepository.deleteAll();
 		informationRepository.save(new InformationEntity("Overview",
 				"This is an example of using a data storage engine running separately from our applications server"));
+
+		bookEntityWithId = new BookEntity("Book", "John Doe", "Fantasy");
+		bookEntityWithId.setId("6413456b37d7e23385bfe7f2");
+		bookRepository.save(bookEntityWithId);
 	}
 
 }

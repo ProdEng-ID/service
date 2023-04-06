@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BookRepository extends MongoRepository<BookEntity, String> {
+ void deleteById(String id);
 }

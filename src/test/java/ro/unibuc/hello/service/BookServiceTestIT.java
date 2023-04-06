@@ -29,7 +29,7 @@ public class BookServiceTestIT {
 
     @BeforeEach
     void setUp() {
-        id = "2";
+        id = "6413456b37d7e23385bfe7f2";
         mybook = new BookEntity("Title2", "Author2","genre2");
         mybook.setId(id);
         deleteresp = "Book " + id + " has been successfully deleted.";

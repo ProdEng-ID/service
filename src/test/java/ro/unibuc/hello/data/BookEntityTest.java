@@ -11,20 +11,22 @@ class BookEntityTest {
     String title;
     String author;
     String genre;
+    BookEntity myBook;
     BookEntity myBook2;
-   // String mybstr;
+    String myBook2String;
     @BeforeEach
     void setUp() {
         id = "1";
         title = "Title";
         author = "author";
         genre = "genre";
+        myBook = new BookEntity("Titlu", "autor","gen");
         myBook2 = new BookEntity();
         myBook2.setId(id);
         myBook2.setAuthor(author);
         myBook2.setGenre(genre);
         myBook2.setTitle(title);
-      //mybstr = "Book[id='1', title='Title', author='author', genre='genre']";
+        myBook2String = "Book[id='1', title='Title', author='author', genre='genre']";
     }
 
     @Test
@@ -47,32 +49,10 @@ class BookEntityTest {
         Assertions.assertEquals(genre, myBook2.getGenre());
     }
 
-   /* @Test
+   @Test
     void testToString() {
-        Assertions.assertEquals(mybstr, myBook2.toString());
-    } */
-
-    BookEntity myBook = new BookEntity("Titlu", "autor","gen");
-
-    @Test
-    void test_title(){
-        Assertions.assertSame("Titlu", myBook.getTitle());
+        Assertions.assertEquals(myBook2String, myBook2.toString());
     }
-
-    @Test
-    void test_author(){
-        Assertions.assertSame("autor", myBook.getAuthor());
-    }
-
-    @Test
-    void test_genre(){
-        Assertions.assertSame("gen", myBook.getGenre());
-    }
-
-
-
-     /*@Test
-    void test_string() { Assertions.assertSame( "Book[id='null', title='Titlu', author='autor', genre='gen']", myBook.toString());}*/
 
 
 

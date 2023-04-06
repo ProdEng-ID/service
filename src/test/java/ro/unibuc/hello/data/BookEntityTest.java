@@ -38,6 +38,11 @@ class BookEntityTest {
     void getTitle() {
         Assertions.assertEquals(title, myBook2.getTitle());
     }
+    
+     @Test
+    void test_title(){
+        Assertions.assertSame("Titlu", myBook.getTitle());
+    }
 
     @Test
     void getAuthor() {

@@ -2,9 +2,9 @@ package ro.unibuc.hello.data;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+
+
 class BookEntityTest {
 
     String id;
@@ -38,8 +38,8 @@ class BookEntityTest {
     void getTitle() {
         Assertions.assertEquals(title, myBook2.getTitle());
     }
-    
-     @Test
+
+    @Test
     void test_title(){
         Assertions.assertSame("Titlu", myBook.getTitle());
     }
@@ -54,7 +54,7 @@ class BookEntityTest {
         Assertions.assertEquals(genre, myBook2.getGenre());
     }
 
-   @Test
+    @Test
     void testToString() {
         Assertions.assertEquals(myBook2String, myBook2.toString());
     }

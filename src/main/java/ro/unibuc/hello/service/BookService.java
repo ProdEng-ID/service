@@ -35,7 +35,7 @@ public class BookService {
     }
 
     public String deleteBook(String id) {
-        bookRepository.deleteById(String.valueOf(new ObjectId(id)));
+        bookRepository.deleteById(id);
         return "Book " + id + " has been successfully deleted.";
     }
 
